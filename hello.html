@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaCore Digital</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+transition: background 0.3s, color 0.3s;
+}
+
+/* LIGHT THEME DEFAULT */
+body{
+background:#f8fafc;
+color:#0f172a;
+scroll-behavior:smooth;
+}
+
+section{
+padding:60px 10%;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav h1{
+color:#0ea5e9;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav ul li a{
+color:#0f172a;
+text-decoration:none;
+}
+
+nav ul li a:hover{
+color:#0ea5e9;
+}
+
+.menu-btn{
+display:none;
+cursor:pointer;
+}
+
+/* THEME BUTTON */
+.theme-btn{
+cursor:pointer;
+padding:8px 12px;
+border-radius:5px;
+background:#e2e8f0;
+border:none;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero p{
+max-width:600px;
+margin-bottom:20px;
+color:#475569;
+}
+
+.btn{
+padding:12px 25px;
+background:#0ea5e9;
+border:none;
+color:white;
+cursor:pointer;
+font-weight:bold;
+border-radius:5px;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.3s;
+opacity:0;
+transform:translateY(50px);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TITLES */
+h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* CONTACT */
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #cbd5f5;
+border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#e2e8f0;
+margin-top:40px;
+}
+
+/* DARK MODE */
+body.dark{
+background:#0f172a;
+color:white;
+}
+
+body.dark nav{
+background:#020617;
+box-shadow:none;
+}
+
+body.dark nav ul li a{
+color:white;
+}
+
+body.dark .card{
+background:#020617;
+box-shadow:0 0 20px rgba(56,189,248,0.2);
+}
+
+body.dark .hero p{
+color:#cbd5f5;
+}
+
+body.dark footer{
+background:#020617;
+}
+
+body.dark input, body.dark textarea{
+background:#020617;
+color:white;
+border:1px solid #334155;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+nav ul{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+body.dark nav ul{
+background:#020617;
+}
+
+nav ul.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<h1>NovaCore</h1>
+
+<div style="display:flex; gap:10px; align-items:center;">
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<ul id="menu">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>NovaCore Digital</h1>
+<h3>Building modern digital experiences for growing businesses.</h3>
+<p>We help startups and businesses grow with modern websites, marketing, branding and AI automation solutions.</p>
+<a href="#contact">
+  <button class="btn">Book a Free Consultation</button>
+</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p style="text-align:center; max-width:700px; margin:auto;">
+NovaCore Digital is a modern digital agency focused on building high-quality websites, marketing strategies and AI-powered solutions that help businesses grow faster.
+</p>
+
+<div class="grid" style="margin-top:30px;">
+<div class="card">🚀 Fast Delivery</div>
+<div class="card">🎯 Conversion Focused</div>
+<div class="card">💡 Modern Design</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><h3>Website Development</h3><p>Modern responsive websites.</p></div>
+<div class="card"><h3>Social Media Marketing</h3><p>Reels & campaigns.</p></div>
+<div class="card"><h3>Branding & Design</h3><p>Logos & identity.</p></div>
+<div class="card"><h3>SEO & Growth</h3><p>Improve rankings.</p></div>
+<div class="card"><h3>AI Automation</h3><p>Chatbots & tools.</p></div>
+</div>
+</section>
+
+<!-- WHY -->
+<section>
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card">⚡ Fast Delivery</div>
+<div class="card">🎨 Modern UI/UX</div>
+<div class="card">💰 Affordable</div>
+<div class="card">📈 Strategy</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="portfolio">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card">Restaurant Website Redesign</div>
+<div class="card">Real Estate Lead Page</div>
+<div class="card">Fitness Campaign</div>
+<div class="card">AI Chatbot</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+<h2>Testimonials</h2>
+<div class="grid">
+<div class="card">"Amazing website!" - Sarah</div>
+<div class="card">"Clean design fast delivery." - Daniel</div>
+<div class="card">"Great results." - Aisha</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<form onsubmit="submitForm(event)" style="max-width:500px;margin:auto;">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message" required></textarea>
+<button class="btn">Submit</button>
+</form>
+
+<p style="text-align:center;margin-top:20px;">
+📧 hello@novacoredigital.com <br>
+📞 +91 9876543210 <br>
+📍 Berlin, Germany
+</p>
+</section>
+
+<footer>
+© 2026 NovaCore Digital
+</footer>
+
+<script>
+// MENU
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+// THEME
+function toggleTheme(){
+document.body.classList.toggle("dark");
+localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+}
+
+// LOAD THEME
+window.onload = ()=>{
+if(localStorage.getItem("theme") === "dark"){
+document.body.classList.add("dark");
+}
+}
+
+// FORM
+function submitForm(e){
+e.preventDefault();
+alert("Thank you! We'll contact you.");
+}
+
+// SCROLL ANIMATION
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", ()=>{
+cards.forEach(card=>{
+let top = card.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+card.style.opacity = 1;
+card.style.transform = "translateY(0)";
+}
+});
+});
+</script>
+
+</body>
+</html>
